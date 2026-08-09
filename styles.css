@@ -678,93 +678,84 @@ body {
 }
 .chief {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
     gap: 1.5rem;
     background-color: #dde4ea;
     border-radius: 30px;
     margin: 20px;
+    padding: 20px;
 }
+
 .guest {
-padding: 1.5rem;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin: 10px;
+    display: flex;
+    flex-direction: column; /* stack content vertically */
+    justify-content: space-between; /* push button to bottom */
     background-color: #d1d9e0;
     border-radius: 20px;
-    border-color: #f4f7fb;
-    border-width: 5px;
-    border-style: solid;
-    padding: -100px;
+    border: 5px solid #f4f7fb;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    min-height: 420px; /* ensures equal height cards */
+}
 
-
+.guest img.guest-image {
+    width: 150px;
+    height: auto;
+    border-radius: 15%;
+    margin-bottom: 1rem;
+    justify-content: center;
+    align-items: center;
     
 }
-.guest:hover{
-    background-color: #0e9f6e;
-    color: #ffffff;
-    transform: scale3d(2,4);
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+
+.guest h3 {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
-.link {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
+
+.guest p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 0.5rem 0;
 }
-.link1 button {
+
+.guest-button {
+    margin-top: auto; /* forces button to bottom */
+}
+
+.guest-button button {
     background-color: #0e9f6e;
-    color: #ffffff;
+    color: #fff;
     border: none;
-    padding: 0.8rem 1.5rem;
-    font-size: 1.1rem;
-    border-radius: 30px;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-}
- button:hover {
-    background-color: #0a7d57;
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(14, 159, 110, 0.5);
-}
-.link1 a {
-    color: #ffffff;
-    text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
-.guest img {
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-    margin-bottom: 1rem;
-    height: 200px;
-    WIDTH: 200px;
-}
-/* Container for all guests */
-.chief {
-  display: flex;
-  flex-wrap: wrap;         /* allows wrapping on smaller screens */
-  justify-content: center; /* center align */
-  gap: 20px;               /* spacing between guest cards */
-  padding: 20px;
-  background: #f9f9f9;     /* light background */
-}
-
-/* Each guest card */
-.guest {
-  flex: 1 1 300px;         /* flexible width, min 300px */
-  max-width: 350px;        /* prevents cards from stretching too wide */
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 15px;
-  text-align: center;
-  transition: transform 0.3s ease;
+.guest-button button:hover {
+    background-color: #0c7a55;
 }
 
 .guest:hover {
-  transform: translateY(-5px); /* subtle hover lift */
+    background-color: #0e9f6e;
+    color: #ffffff;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
 }
+
+/* 📱 Responsive tweaks */
+@media (max-width: 768px) {
+    .chief {
+        grid-template-columns: 1fr; /* stack cards on tablets & phones */
+    }
+    .guest {
+        min-height: auto; /* allow flexible height on small screens */
+    }
+}
+
 
 /* Guest images */
 .guest-image {
