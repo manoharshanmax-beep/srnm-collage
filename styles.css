@@ -164,6 +164,16 @@ body {
     text-decoration: none;
     font-size: 15px;
 }
+.abcd h2 {
+  animation: blink 1.5s infinite;
+  color: #f8cc08; /* optional: red color for emphasis */
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
 
 /* Main navbar */
 .navbar {
@@ -234,6 +244,16 @@ body {
     text-align: center;
     margin-top: 20px;
     font family: Arial, sans-serif;
+}
+.abcd {
+    display: flex;
+    justify-content: space-between; /* one left, one right */
+    align-items: center;            /* vertical alignment */
+    padding: 0 2rem;                /* space inside container */
+}
+
+.abcd h2 {
+    margin: 0;                      /* remove default h2 margin */
 }
 
 :root {
@@ -396,13 +416,28 @@ body {
 .about-text p {
     margin-bottom: 1rem;
     color: var(--muted);
+    margin-bottom: 1rem;
+    color: var(--muted);
+    text-align: justify;   /* centers text horizontally */
+}
+
+.about-text h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.8rem;
+    text-align: justify;  /* centers the heading */
 }
 
 .about-text strong,
 .organisers strong {
     color: var(--navy);
 }
-
+.organisers img{
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
 .organisers {
     background: var(--bg);
     border: 1px solid var(--border);
