@@ -15,6 +15,7 @@ body {
     background-color: #f5f5f5;
 }
 
+/* Navbar container */
 .navbar {
   display: flex;
   justify-content: space-between; /* spreads left, center, right */
@@ -240,6 +241,9 @@ body {
         left: 10px;
     }
 }
+
+
+
 .heading {
     text-align: center;
     margin-top: 20px;
@@ -248,13 +252,60 @@ body {
 .abcd {
     display: flex;
     justify-content: space-between; /* one left, one right */
-    align-items: center;            /* vertical alignment */
+    align-items: justify;            /* vertical alignment */
     padding: 0 2rem;                /* space inside container */
 }
 
 .abcd h2 {
     margin: 0;                      /* remove default h2 margin */
 }
+/* Container */
+.abcd {
+  text-align: justify;  /* centers content horizontally */
+  margin: 20px auto;
+  max-width: 1200px;   /* keeps content centered on large screens */
+  padding: 10px;
+}
+
+/* Headings with blink */
+.abcd h2 {
+  animation: blink 1.5s infinite;
+  color: #f8cc08;   /* golden yellow highlight */
+  font-weight: bold;
+  font-size: 1.6rem;
+  margin: 10px 0;
+  line-height: 1.4;
+}
+
+/* Blink animation */
+@keyframes blink {
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+  .abcd h2 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Tablets / mid-size screens */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .abcd h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Ultra-large screens (TVs, projectors) */
+@media (min-width: 1600px) {
+  .abcd h2 {
+    font-size: 2rem;
+    line-height: 1.6;
+  }
+}
+
 
 :root {
     --navy: #0b2a4a;
@@ -437,6 +488,11 @@ body {
     width: 100%;
     height: auto;
     border-radius: 12px;
+     margin-left: 120px;
+  width: 50%;
+  height: 80%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 .organisers {
     background: var(--bg);
@@ -464,6 +520,62 @@ body {
 .org-city {
     color: var(--muted);
 }
+/*second one*/
+
+.zigzag {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem; /* spacing between items */
+  padding: 3.5rem 0;
+}
+
+.zigzag-item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.zigzag-text {
+  flex: 1;
+  text-align: justify;
+}
+
+.zigzag-image {
+  flex: 1;
+  height: 70%;
+  padding-top: 10px;
+}
+
+.zigzag-image img {
+  width: 70%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.zigzag-image1 {
+  flex: 1;
+  height: 70%;
+  padding-top: 10px;
+}
+
+.zigzag-image1 img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Reverse layout for alternating effect */
+.zigzag-item.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 768px) {
+  .zigzag-item,
+  .zigzag-item.reverse {
+    flex-direction: column;
+  }
+}
+
 
 .accreditation {
     display: inline-block;
@@ -860,7 +972,7 @@ body {
 .navbar .alogo img {
     width: auto;
     height: auto;
-    border-radius: 20px;
+    border-radius: 50%;
     margin-bottom: 1rem;
     height: 200px;
     WIDTH: 200px;
