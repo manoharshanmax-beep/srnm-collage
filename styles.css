@@ -824,114 +824,57 @@ body {
     }
 }
 .chief {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    gap: 1.5rem;
-    background-color: #dde4ea;
-    border-radius: 30px;
-    margin: 20px;
-    padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  background-color: #dde4ea;
+  border-radius: 30px;
+  margin: 20px;
+  padding: 20px;
 }
 
 .guest {
-    display: flex;
-    flex-direction: column; /* stack content vertically */
-    justify-content: space-between; /* push button to bottom */
-    background-color: #d1d9e0;
-    border-radius: 20px;
-    border: 5px solid #f4f7fb;
-    padding: 1.5rem;
-    text-align: center;
-    transition: all 0.3s ease-in-out;
-    min-height: 420px; /* ensures equal height cards */
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* ✅ centers all content horizontally */
+  justify-content: space-between;
+  background-color: #d1d9e0;
+  border-radius: 20px;
+  border: 5px solid #f4f7fb;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  min-height: 420px;
 }
 
 .guest img.guest-image {
-    width: 150px;
-    height: auto;
-    border-radius: 15%;
-    margin-bottom: 1rem;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.guest h3 {
-    margin: 0.5rem 0;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-.guest p {
-    font-size: 0.95rem;
-    line-height: 1.4;
-    margin: 0.5rem 0;
-}
-
-.guest-button {
-    margin-top: auto; /* forces button to bottom */
-}
-
-.guest-button button {
-    background-color: #0e9f6e;
-    color: #fff;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.guest-button button:hover {
-    background-color: #0c7a55;
-}
-
-.guest:hover {
-    background-color: #0e9f6e;
-    color: #ffffff;
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-}
-
-/* 📱 Responsive tweaks */
-@media (max-width: 768px) {
-    .chief {
-        grid-template-columns: 1fr; /* stack cards on tablets & phones */
-    }
-    .guest {
-        min-height: auto; /* allow flexible height on small screens */
-    }
-}
-
-
-/* Guest images */
-.guest-image {
-  width: 100%;
-  max-width: 200px;        /* keeps images neat */
+  width: 150px;
   height: auto;
-  border-radius: 50%;      /* circular profile style */
-  margin-bottom: 15px;
+  border-radius: 50%;        /* circular profile */
+  margin-bottom: 1rem;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: block;
 }
 
-/* Guest name */
 .guest h3 {
-  font-size: 20px;
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
   font-weight: bold;
-  margin: 10px 0;
   color: #333;
 }
 
-/* Guest description */
 .guest p {
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0.5rem 0;
   color: #555;
-  margin: 8px 0;
 }
 
-/* Scholar button */
-.guest-button a button {
+.guest-button {
+  margin-top: auto;
+}
+
+.guest-button button {
   background: linear-gradient(135deg, #4caf50, #2e7d32);
   color: #fff;
   font-size: 14px;
@@ -943,21 +886,29 @@ body {
   transition: all 0.3s ease;
 }
 
-.guest-button a button:hover {
+.guest-button button:hover {
   background: linear-gradient(135deg, #66bb6a, #388e3c);
   transform: scale(1.05);
   box-shadow: 0 6px 14px rgba(0,0,0,0.3);
 }
 
-/* Responsive tweaks */
+.guest:hover {
+  background-color: #0e9f6e;
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+/* 📱 Responsive tweaks */
 @media (max-width: 768px) {
   .chief {
-    flex-direction: column; /* stack cards vertically */
+    grid-template-columns: 1fr;
     align-items: center;
   }
 
   .guest {
-    max-width: 90%;        /* take most of screen width */
+    max-width: 90%;
+    min-height: auto;
   }
 
   .guest h3 {
