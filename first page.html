@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICSBIGC–2026 | Welcome</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(rgba(230, 255, 240, 0.92), rgba(255, 255, 255, 0.96));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #16452b;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1000px;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: clamp(14px, 2vw, 18px);
+      font-weight: bold;
+      letter-spacing: 3px;
+      color: #2e8b57;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 65px);
+      line-height: 1.15;
+      margin-bottom: 15px;
+      color: #16452b;
+    }
+
+    h1 span {
+      color: #3cb371;
+    }
+
+    .subtitle {
+      max-width: 750px;
+      margin: auto;
+      font-size: clamp(14px, 2vw, 19px);
+      line-height: 1.7;
+      color: #4f6658;
+    }
+
+    .year {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 8px 22px;
+      border: 1px solid #8fd8ad;
+      border-radius: 30px;
+      color: #2e8b57;
+      font-weight: bold;
+      background: #f1fff6;
+      font-size: clamp(13px, 1.5vw, 16px);
+    }
+
+    /* Choice Box */
+    .choice-box {
+      margin: 45px auto 0;
+      max-width: 800px;
+      padding: 35px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #b7e6c9;
+      border-radius: 25px;
+      box-shadow: 0 15px 40px rgba(46, 139, 87, 0.15);
+    }
+
+    .choice-title {
+      font-size: clamp(18px, 2vw, 22px);
+      margin-bottom: 25px;
+      color: #16452b;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      width: clamp(180px, 40%, 250px);
+      padding: 17px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: clamp(14px, 1.5vw, 17px);
+      font-weight: bold;
+      transition: 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    /* Mobile Button */
+    .mobile-btn {
+      background: #90ee90;
+      color: #16452b;
+      border: 2px solid #90ee90;
+    }
+
+    /* Laptop Button */
+    .laptop-btn {
+      background: white;
+      color: #2e8b57;
+      border: 2px solid #90ee90;
+    }
+
+    .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(46, 139, 87, 0.2);
+    }
+
+    .mobile-btn:hover {
+      background: #76d776;
+    }
+
+    .laptop-btn:hover {
+      background: #90ee90;
+      color: #16452b;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 13px;
+      color: #6b8172;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+      }
+
+      .choice-box {
+        margin-top: 30px;
+        padding: 25px 18px;
+        border-radius: 20px;
+      }
+
+      .buttons {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">INTERNATIONAL CONFERENCE</div>
+    <h1>ICSBIGC–<span>2026</span></h1>
+    <p class="subtitle">
+      International Conference on Sustainable Business, Innovation & Global Competitiveness
+    </p>
+    <div class="year">
+      2026 • SUSTAINABILITY • INNOVATION • GLOBAL COMPETITIVENESS
+    </div>
+
+    <div class="choice-box">
+      <div class="choice-title">Choose Your Preferred Experience</div>
+      <div class="buttons">
+        <a href="mobile.html" class="btn mobile-btn">📱 Continue on Mobile</a>
+        <a href="index.html" class="btn laptop-btn">💻 Continue on Laptop</a>
+      </div>
+    </div>
+
+    <div class="footer">© 2026 ICSBIGC • All Rights Reserved</div>
+  </div>
+</body>
+</html>
