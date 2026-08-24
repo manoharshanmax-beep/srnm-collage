@@ -229,6 +229,8 @@
       font-size: clamp(0.9rem, 1.1vw, 1.1rem);
       color: var(--text-main);
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
 
     tbody tr {
@@ -264,12 +266,24 @@
       background-color: #bbf7d0;
     }
 
+    /* Desktop table: allow horizontal scroll as a safety net rather than
+       letting long content force the whole page to overflow */
+    .table-container {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+      min-width: 480px;
+    }
+
     /* Mobile & Tablet Card Layout Transformation */
-    @media (max-width: 640px) {
+    @media (max-width: 768px) {
       .table-container {
         border: none;
         background: transparent;
         box-shadow: none;
+        overflow-x: visible;
       }
 
       table, thead, tbody, th, td, tr {
@@ -295,10 +309,13 @@
 
       td {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
+        gap: 4px 12px;
         padding: 8px 0;
         border-bottom: 1px dashed #e2e8f0;
+        text-align: right;
       }
 
       td:last-child {
@@ -640,11 +657,19 @@
   }
 
 }
+
+@media (max-width: 380px) {
+
+  .session-menu {
+    grid-template-columns: 1fr;
+  }
+
+}
   </style>
 </head>
 <body>
 
-  <class="container">
+  <div class="container">
     <!-- Top Left Back Button -->
     <div class="top-nav">
       <button class="back-btn" onclick="history.back()">
@@ -733,7 +758,6 @@
     </a>
 
   </div>
-</div>
 </div>
 
     <div class="table-container">
